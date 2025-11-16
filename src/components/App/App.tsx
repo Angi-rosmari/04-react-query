@@ -6,12 +6,12 @@ import ReactPaginate from "react-paginate";
 
 import SearchBar from "../SearchBar/SearchBar";
 import MovieGrid from "../MovieGrid/MovieGrid";
-import ErrorMessage from "../ErrorMessage/ErrorMessage.tsx";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 import { fetchMovies } from "../../services/movieService";
-import type { Movie } from "../../types/movie.ts";
-import Loader from "../Loader/Loader.tsx";
-import MovieModal from "../MovieModal/MovieModal.tsx";
+import type { Movie } from "../../types/movie";
+import Loader from "../Loader/Loader";
+import MovieModal from "../MovieModal/MovieModal";
 
 function App() {
   const [query, setQuery] = useState("");
