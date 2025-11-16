@@ -17,6 +17,7 @@ export async function fetchMovies(
       params: { query, page },
       headers: {
         Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
+        "Content-Type": "application/json",
       },
     }
   );
