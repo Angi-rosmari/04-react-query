@@ -1,18 +1,23 @@
-import "modern-normalize";
-import { StrictMode } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
+import App from "./components/App/App";
+import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import "modern-normalize/modern-normalize.css";
 
-import App from "../src/components/App/App.tsx";
+const container = document.getElementById("root");
+if (!container) throw new Error("Root element not found.");
 
+const root = createRoot(container);
+
+// Ініціалізуємо клієнт React Query
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById("root")!).render(
-  <QueryClientProvider client={queryClient}>
-    <StrictMode>
+root.render(
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
       <App />
-      <ReactQueryDevtools initialIsOpen={false} />
-    </StrictMode>
-  </QueryClientProvider>
+      <Toaster position="top-right" reverseOrder={false} />
+    </QueryClientProvider>
+  </React.StrictMode>
 );
